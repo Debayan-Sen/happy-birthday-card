@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday!</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<audio id="birthdayMusic" autoplay loop>
+  <source src="happy_birthday.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+<body>
+  <div id="welcomeOverlay">
+    <div class="overlay-content">
+      <h2>Allow Microphone Access</h2>
+      <p>Raise volume a little</p>
+      <button id="startButton">Let's Start</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="cake">
+      <div class="flame" id="flame"></div>
+      <div class="candle"></div>
+      <div class="frosting"></div>
+      <div class="base"></div>
+    </div>
+    <p>Blow the candle to see your surprise!</p>
+    <button id="blowBtn" class="hidden">Blow Candle 🎉</button>
+    <div id="message" class="hidden">🎈 Happy Birthday! 🎈</div>
+    <br>
+    <br>
+    <button id="musicToggleBtn">🔊 Toggle Music</button>
+    <canvas id="confettiCanvas"></canvas>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

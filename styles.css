@@ -1,0 +1,218 @@
+body {
+    font-family: 'Comic Sans MS', cursive;
+    text-align: center;
+    background: #ffe4e1;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .card {
+    margin-top: 100px;
+    position: relative;
+  }
+  
+  .cupcake {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .cake {
+    position: relative;
+    margin: 0 auto 20px;
+    width: 100px;
+  }
+  
+  .flame {
+    width: 12px;
+    height: 24px;
+    background: radial-gradient(circle at 50% 20%, #fff8dc, #ffa500, #ff4500);
+    border-radius: 50% 50% 40% 40%;
+    margin: 0 auto;
+    animation: flameFlicker 1s infinite ease-in-out alternate;
+    box-shadow: 0 0 10px 4px rgba(255, 165, 0, 0.6);
+    position: relative;
+    z-index: 1;
+  }
+
+  
+  .candle {
+    width: 10px;
+    height: 40px;
+    background: white;
+    border: 2px solid red;
+    margin: 0 auto;
+  }
+  
+  .frosting {
+    width: 80px;
+    height: 20px;
+    background: pink;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0 0 0 3px #ff69b4 inset;
+  }
+  
+  .base {
+    width: 100px;
+    height: 50px;
+    background: #8b4513;
+    border-radius: 5px;
+    margin: 0 auto;
+    box-shadow: 0 0 0 3px #a0522d inset;
+  }
+  
+  @keyframes flameFlicker {
+    0% {
+      transform: scaleY(1) scaleX(1);
+      opacity: 1;
+      box-shadow: 0 0 10px 4px rgba(255, 165, 0, 0.6);
+    }
+    25% {
+      transform: scaleY(1.1) scaleX(0.95);
+      opacity: 0.9;
+      box-shadow: 0 0 14px 6px rgba(255, 140, 0, 0.5);
+    }
+    50% {
+      transform: scaleY(0.95) scaleX(1.05);
+      opacity: 1;
+      box-shadow: 0 0 12px 5px rgba(255, 120, 0, 0.7);
+    }
+    75% {
+      transform: scaleY(1.05) scaleX(0.9);
+      opacity: 0.95;
+      box-shadow: 0 0 13px 4px rgba(255, 160, 0, 0.6);
+    }
+    100% {
+      transform: scaleY(1) scaleX(1);
+      opacity: 1;
+      box-shadow: 0 0 10px 4px rgba(255, 165, 0, 0.6);
+    }
+  }
+
+  @keyframes smooth-flicker {
+    0%   { transform: scale(1) rotate(0deg); opacity: 1; }
+    25%  { transform: scale(1.1) rotate(-5deg); opacity: 0.8; }
+    50%  { transform: scale(0.9) rotate(5deg); opacity: 0.6; }
+    75%  { transform: scale(1.05) rotate(-3deg); opacity: 0.9; }
+    100% { transform: scale(1) rotate(0deg); opacity: 1; }
+  }
+
+  .flame-flicker {
+    animation: smooth-flicker 0.6s ease-in-out;
+  }
+
+  @keyframes quickFlicker {
+    0% { transform: scale(1) rotate(0deg); }
+    25% { transform: scale(0.95) rotate(5deg); }
+    50% { transform: scale(1.05) rotate(-5deg); }
+    75% { transform: scale(0.98) rotate(3deg); }
+    100% { transform: scale(1) rotate(0deg); }
+  }
+
+
+  .hidden {
+    display: none;
+  }
+  
+  #message {
+    font-size: 2rem;
+    margin-top: 20px;
+  }
+
+  #blowMeterContainer {
+  width: 80%;
+  height: 15px;
+  margin: 15px auto;
+  background-color: #eee;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: inset 0 0 5px #aaa;
+}
+
+#blowMeter {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(to right, #00f260, #0575e6);
+  transition: width 0.1s ease-out;
+}
+
+#welcomeOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff8f0;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.overlay-content {
+  background: #ffe4e1;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px #ccc;
+}
+
+#welcomeOverlay h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+#welcomeOverlay button {
+  margin-top: 20px;
+  padding: 12px 24px;
+  font-size: 1.1rem;
+  border: none;
+  background: #ff69b4;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#welcomeOverlay button:hover {
+  background: #ff1493;
+}
+
+@media (max-width: 480px) {
+  .card {
+    margin-top: 40px;
+  }
+
+  #message {
+    font-size: 1.5rem;
+  }
+
+  button {
+    font-size: 0.9rem;
+    padding: 10px 16px;
+  }
+  button {
+    width: 90%;
+    font-size: 1rem;
+  }
+
+  .frosting, .base {
+    width: 70px;
+  }
+
+  .cake {
+    width: 80px;
+  }
+
+  .flame {
+    width: 10px;
+    height: 20px;
+  }
+
+  .candle {
+    width: 8px;
+    height: 35px;
+  }
+}
